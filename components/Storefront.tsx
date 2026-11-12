@@ -54,6 +54,12 @@ export default function Storefront({ paypalClientId }: { paypalClientId: string 
   );
   const total = lines.reduce((s, l) => s + l.price * l.quantity, 0);
 
+  // Stable SDK options so the PayPal script is never reset by an unrelated re-render.
+  const paypalOptions = useMemo(
+    () => ({ clientId: paypalClientId, intent: "authorize", currency: "USD", disableFunding: "card,paylater,credit,venmo" }),
+    [paypalClientId],
+  );
+
   const setQty = (sku: string, q: number) =>
     setCart((c) => {
       const next = { ...c };
@@ -216,7 +222,12 @@ export default function Storefront({ paypalClientId }: { paypalClientId: string 
                   NEXT_PUBLIC_PAYPAL_CLIENT_ID is not set. Add it to .env.local and restart.
                 </div>
               ) : (
-                <PayPalScriptProvider options={{ clientId: paypalClientId, intent: "authorize", currency: "USD", disableFunding: "card,paylater,credit,venmo" }}>
+                <PayPalScriptProvider options={paypalOptions}>
+                  {lines.length === 0 ? (
+                    <div className="rounded-md border border-dashed border-slate-300 p-4 text-center text-sm text-slate-500">
+                      Add something to your cart to check out with PayPal.
+                    </div>
+                  ) : (
                   <PayPalButtons
                     style={{ layout: "vertical", shape: "rect", label: "pay" }}
                     disabled={busy}
@@ -249,6 +260,7 @@ export default function Storefront({ paypalClientId }: { paypalClientId: string 
                     onCancel={() => setError("Payment cancelled — nothing was charged.")}
                     onError={(err) => setError(err instanceof Error ? err.message : String(err))}
                   />
+                  )}
                 </PayPalScriptProvider>
               )}
               <p className="mt-2 text-xs text-slate-500">Your PayPal payment is authorized now and charged only after the order is reviewed.</p>
