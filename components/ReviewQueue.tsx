@@ -220,7 +220,7 @@ export default function ReviewQueue() {
   }
 
   async function resetDemo() {
-    if (!confirm("Reset all demo data? Seeded orders go back to their original state. Live sandbox orders are kept.")) return;
+    if (!confirm("Reset to demo data? This clears every order, including live sandbox orders, and restores the original seeded demo orders. (Uncaptured PayPal sandbox authorizations simply expire.)")) return;
     const res = await fetch("/api/demo/reset", { method: "POST" });
     const data = await res.json();
     toast(res.ok, res.ok ? data.message : data.error);

@@ -69,7 +69,7 @@ flowchart LR
 - **Identity linking** that survives typos: addresses are lowercased, stripped of punctuation, whitespace-collapsed and abbreviation-expanded (`Jln` → `Jalan`), and phones are compared on their last 8 digits.
 - **Honor-period countdown.** PayPal guarantees capture for 3 days after authorization; the queue shows how long is left.
 - **Graceful failure.** If the AI call fails (twice), Tripwire falls back to a deterministic rule score, clearly labeled "rules / AI unavailable". PayPal errors (already captured, already voided, expired, declined) are shown in plain English with PayPal's debug ID, and local state is reconciled with PayPal.
-- **Demo data vs. live data.** 40 seeded orders are badged **Demo data**; Approve/Void on them only changes local state. Real sandbox orders are badged **Live** and make real PayPal calls. **Reset demo data** restores the seed without touching live orders.
+- **Demo data vs. live data.** 40 seeded orders are badged **Demo data**; Approve/Void on them only changes local state. Real sandbox orders are badged **Live** and make real PayPal calls. **Reset demo data** starts over with only the seeded orders, clearing live test orders too.
 
 ## PayPal integration
 
@@ -202,7 +202,7 @@ Find each account's email and password under **Testing Tools → Sandbox Account
 5. Click the row to open the drawer and read the AI's reasoning. Click a linked order to jump to it.
 6. Click **Void** → confirm. PayPal releases the hold. **The money never moved.**
 
-Use **Reset demo data** at any time to restore the seeded orders (live sandbox orders are kept).
+Use **Reset demo data** at any time to start over: it clears every order, including live sandbox orders, and restores the original seeded demo orders.
 
 ## Deploying to Render (optional, not deployed)
 
@@ -213,7 +213,7 @@ Use **Reset demo data** at any time to restore the seeded orders (live sandbox o
 3. Set the environment variables when prompted: `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `NEXT_PUBLIC_PAYPAL_CLIENT_ID`, and `ANTHROPIC_API_KEY` (or leave it empty and set `GEMINI_API_KEY` instead).
 4. Deploy. Render's free tier has an ephemeral filesystem, so orders reset on each redeploy or restart, and the demo seed reloads automatically.
 
-**Long-running demos:** seeded demo data automatically resets and re-dates itself every 24 hours (live sandbox orders are kept), so the queue always looks current and one visitor's approvals don't empty it for the next. Render's free plan sleeps after 15 minutes idle (the first request then takes up to a minute). To avoid that, either use the Starter plan or point a free uptime monitor at `/api/orders` every 10 minutes.
+**Long-running demos:** seeded demo data automatically resets and re-dates itself every 24 hours (live sandbox orders are kept, so an order someone just placed never disappears mid-review), so the queue always looks current and one visitor's approvals don't empty it for the next. Render's free plan sleeps after 15 minutes idle (the first request then takes up to a minute). To avoid that, either use the Starter plan or point a free uptime monitor at `/api/orders` every 10 minutes.
 
 ## Project structure
 

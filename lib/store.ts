@@ -44,7 +44,8 @@ async function loadSeed(): Promise<Order[]> {
 }
 
 // Demo data auto-refreshes once a day, so a long-running deployment (e.g. during judging)
-// always shows recent dates and a fresh queue. Live sandbox orders are never touched.
+// always shows recent dates and a fresh queue. Live sandbox orders are kept here (unlike the manual reset),
+// so an order someone just placed never disappears mid-review.
 const AUTO_RESET_MS = 24 * 60 * 60 * 1000;
 let seededAt = Date.now();
 
@@ -105,10 +106,9 @@ export async function updateOrder(id: string, mutate: (o: Order) => void): Promi
   return order;
 }
 
-/** Restore seeded demo data, keeping live sandbox orders. */
+/** "Reset demo data" button: start over with only the seeded demo orders (live sandbox orders are removed too). */
 export async function resetDemoData(): Promise<void> {
-  const live = (await load()).filter((o) => !o.demo);
-  cache = [...(await loadSeed()), ...live];
+  cache = await loadSeed();
   seededAt = Date.now();
   await persist();
 }
