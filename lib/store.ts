@@ -42,7 +42,19 @@ async function loadSeed(): Promise<Order[]> {
   }
 }
 
+// Demo data auto-refreshes once a day, so a long-running deployment (e.g. during judging)
+// always shows recent dates and a fresh queue. Live sandbox orders are never touched.
+const AUTO_RESET_MS = 24 * 60 * 60 * 1000;
+let seededAt = Date.now();
+
 async function load(): Promise<Order[]> {
+  if (cache && Date.now() - seededAt > AUTO_RESET_MS) {
+    seededAt = Date.now(); // set first so concurrent requests don't reset twice
+    const live = cache.filter((o) => !o.demo);
+    cache = [...(await loadSeed()), ...live];
+    await persist();
+    console.log("[store] demo data auto-refreshed");
+  }
   if (cache) return cache;
   try {
     cache = JSON.parse(await fs.readFile(ORDERS_FILE, "utf8")) as Order[];
@@ -50,6 +62,7 @@ async function load(): Promise<Order[]> {
     cache = await loadSeed();
     await persist();
   }
+  seededAt = Date.now();
   return cache;
 }
 
@@ -95,6 +108,7 @@ export async function updateOrder(id: string, mutate: (o: Order) => void): Promi
 export async function resetDemoData(): Promise<void> {
   const live = (await load()).filter((o) => !o.demo);
   cache = [...(await loadSeed()), ...live];
+  seededAt = Date.now();
   await persist();
 }
 

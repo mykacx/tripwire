@@ -174,6 +174,8 @@ Use **Reset demo data** at any time to restore the seeded orders (live sandbox o
 3. Set the four environment variables (`PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `NEXT_PUBLIC_PAYPAL_CLIENT_ID`, `ANTHROPIC_API_KEY`) when prompted.
 4. Deploy. Render's free tier has an ephemeral filesystem, so orders reset on each redeploy or restart, and the demo seed reloads automatically.
 
+**Long-running demos:** seeded demo data automatically resets and re-dates itself every 24 hours (live sandbox orders are kept), so the queue always looks current and one visitor's approvals don't empty it for the next. Render's free plan sleeps after 15 minutes idle (the first request then takes up to a minute). To avoid that, either use the Starter plan or point a free uptime monitor at `/api/orders` every 10 minutes.
+
 ## Project structure
 
 ```
