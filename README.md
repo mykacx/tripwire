@@ -152,12 +152,14 @@ On first run, `data/orders.json` is created from `data/seed.json`. To regenerate
 
 ## Try the demo scenarios
 
-Sandbox test logins (test accounts only, no real money):
+You need two **Personal** sandbox buyer accounts from your own PayPal developer dashboard (setup step 2). The country matters because Tripwire compares the PayPal account's country with the shipping country:
 
-| Buyer | Email | Password |
+| Buyer | Sandbox account country | Used for |
 |---|---|---|
-| Buyer 1 (US/Singapore) | `SANDBOX_BUYER_1_EMAIL` | `SANDBOX_BUYER_1_PASSWORD` |
-| Buyer 2 (Brazil) | `SANDBOX_BUYER_2_EMAIL` | `SANDBOX_BUYER_2_PASSWORD` |
+| Buyer 1 | **United States** or **Singapore** | Normal order (scenario 1) |
+| Buyer 2 | **Brazil** | Fraud order (scenario 2): Brazil account shipping to Singapore |
+
+Find each account's email and password under **Testing Tools → Sandbox Accounts → ⋯ → View/Edit account**. They are test accounts with fake funds; no real money is involved.
 
 ### 1. A normal order → low risk → Approve
 
