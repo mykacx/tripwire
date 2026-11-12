@@ -84,3 +84,41 @@ export interface CheckoutForm {
   note?: string;
   items: { sku: string; quantity: number }[];
 }
+
+// ---- Risk signals (Phase 2) ----
+
+export type Severity = "none" | "low" | "medium" | "high";
+export type RiskLevel = "low" | "medium" | "high";
+
+export type SignalName =
+  | "amount_vs_typical"
+  | "velocity"
+  | "country_mismatch"
+  | "new_customer_high_value"
+  | "high_risk_items"
+  | "quantity_anomaly"
+  | "odd_hour"
+  | "shared_identity";
+
+export interface Signal {
+  name: SignalName;
+  label: string; // short chip text, e.g. "17× typical"
+  value: number | string | boolean;
+  severity: Severity;
+  points: number; // contribution to the rule score
+  text: string; // human-readable explanation
+  relatedOrderIds?: string[];
+}
+
+export interface RuleResult {
+  score: number; // 0–100
+  level: RiskLevel;
+  medianTotal: number;
+  multiple: number; // total ÷ median
+}
+
+/** An order plus everything computed about it, as sent to the UI. */
+export interface OrderView extends Order {
+  signals: Signal[];
+  rule: RuleResult;
+}
