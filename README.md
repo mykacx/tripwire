@@ -35,7 +35,7 @@ flowchart LR
     API -->|authorize order| PP
     API --> S[(JSON order store)]
     S --> SIG[lib/signals.ts<br/>deterministic signals + rule score]
-    SIG --> AI[lib/ai.ts<br/>Claude: risk level, explanation,<br/>linked orders]
+    SIG --> AI[lib/ai.ts<br/>Claude, or Gemini as a free option:<br/>risk level, explanation, linked orders]
     AI --> S
     S --> Q[Review queue<br/>AG Grid + drawer]
     Q -->|human: Approve| CAP[Payments v2<br/>capture authorization]
@@ -47,7 +47,7 @@ flowchart LR
 1. **Buyer checks out** on the demo store. Tripwire creates a PayPal order with `intent: AUTHORIZE` and the shipping address the buyer typed (`shipping_preference: SET_PROVIDED_ADDRESS`).
 2. **Buyer approves in PayPal**, and Tripwire calls **authorize**. Funds are held. The buyer sees *"Order received — pending review"*.
 3. **Signals are computed** by plain code (`lib/signals.ts`) from the store's own history: amount vs. typical order, velocity, PayPal country vs. shipping country, new customer + high value, resale-risk items, quantity anomalies, odd hours (Singapore time) and **shared identity** (same normalized address, phone or PayPal account under a different name/email).
-4. **Claude reviews** the order, the signals and summaries of related orders, and returns strict JSON: risk level, score, a one-sentence summary, evidence-based reasons, a recommended action, linked order IDs and confidence.
+4. **Claude reviews** (or Gemini, if that is the key you set) the order, the signals and summaries of related orders, and returns strict JSON: risk level, score, a one-sentence summary, evidence-based reasons, a recommended action, linked order IDs and confidence.
 5. **A human decides** in the review queue: capture or void.
 
 ## Features
@@ -182,7 +182,7 @@ Use **Reset demo data** at any time to restore the seeded orders (live sandbox o
 
 1. Push this repo to GitHub.
 2. In Render: **New → Blueprint**, select the repo. `render.yaml` defines a free web service named **tripwire** (`npm ci && npm run build`, then `npm start`).
-3. Set the four environment variables (`PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `NEXT_PUBLIC_PAYPAL_CLIENT_ID`, `ANTHROPIC_API_KEY`) when prompted.
+3. Set the environment variables when prompted: `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `NEXT_PUBLIC_PAYPAL_CLIENT_ID`, and `ANTHROPIC_API_KEY` (or leave it empty and set `GEMINI_API_KEY` instead).
 4. Deploy. Render's free tier has an ephemeral filesystem, so orders reset on each redeploy or restart, and the demo seed reloads automatically.
 
 **Long-running demos:** seeded demo data automatically resets and re-dates itself every 24 hours (live sandbox orders are kept), so the queue always looks current and one visitor's approvals don't empty it for the next. Render's free plan sleeps after 15 minutes idle (the first request then takes up to a minute). To avoid that, either use the Starter plan or point a free uptime monitor at `/api/orders` every 10 minutes.
@@ -205,7 +205,7 @@ components/                    ReviewQueue (AG Grid), cells, OrderDrawer, Storef
 lib/
   paypal.ts                    PayPal REST client (token cache, errors, idempotency)
   signals.ts                   Deterministic risk signals + rule score
-  ai.ts                        Claude review (structured output, retry, fallback)
+  ai.ts                        AI review: Claude or Gemini provider, structured output, retry, fallback
   decisions.ts                 Approve/Void logic (demo vs. live)
   store.ts                     JSON-file store
 data/seed.json                 40 fictional demo orders

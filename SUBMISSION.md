@@ -25,6 +25,7 @@ The AI never moves money on its own.
 - **Next.js (App Router) + TypeScript + Tailwind** for the storefront, the review queue and the API routes.
 - **PayPal REST APIs (sandbox):** Orders v2 to create (`intent: AUTHORIZE`, with the buyer-entered address via `SET_PROVIDED_ADDRESS`) and authorize orders; Payments v2 to capture or void authorizations; and the PayPal JS SDK for the checkout buttons. All calls are server-side with a cached OAuth token, idempotency keys and plain-English error handling.
 - **Anthropic Claude (`claude-sonnet-5-5`)** for the risk review, with structured JSON output validated by zod, a retry, and a deterministic rule-score fallback when the AI is unavailable. The prompt requires evidence-based reasons, honesty about weak evidence, consideration of innocent explanations, and treating customer-written text as untrusted data.
+- **Google Gemini (optional, free tier)** as a second provider behind the same interface, so anyone can run the full AI review without paying. With no key at all, Tripwire still runs on rule scores and labels them "AI unavailable".
 - **AG Grid Community** as the centerpiece: a customized Quartz theme, custom cell renderers (risk badges, score bars, signal chips, country-mismatch highlight, honor-period countdown, action buttons), risk-based row styling, a pinned totals row, cell flashing for new and changed orders, a quick filter, tooltips and live updates via `getRowId`. There are no Enterprise features, so no license key is needed.
 - **Claude Code** as a coding assistant during the build. The product design, fraud signals and demo were directed by us.
 
@@ -58,4 +59,4 @@ The AI never moves money on its own.
 
 ## Built with
 
-`paypal` · `paypal-orders-v2` · `paypal-payments-v2` · `paypal-js-sdk` · `anthropic` · `claude` · `ag-grid` · `nextjs` · `react` · `typescript` · `tailwindcss` · `zod` · `render`
+`paypal` · `paypal-orders-v2` · `paypal-payments-v2` · `paypal-js-sdk` · `anthropic` · `claude` · `gemini` · `ag-grid` · `nextjs` · `react` · `typescript` · `tailwindcss` · `zod` · `render`
