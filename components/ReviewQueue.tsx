@@ -93,6 +93,15 @@ export default function ReviewQueue() {
     }
   }, []);
 
+  // Deep links: /?tab=all&order=TW-123ABC opens a tab and an order's drawer.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get("tab");
+    if (t && TABS.some((x) => x.key === t)) setTab(t as Tab);
+    const id = params.get("order");
+    if (id) setSelectedId(id);
+  }, []);
+
   // Poll every 3 seconds.
   useEffect(() => {
     load();

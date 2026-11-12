@@ -4,6 +4,18 @@
 
 > The AI spots the risk, you make the call, and fraud is stopped before the money moves.
 
+### Quick start for judges
+
+1. Create **two free PayPal sandbox buyer accounts** (one **US or Singapore**, one **Brazil**) and a sandbox app, then put its keys in `.env.local` ([details](#local-setup)).
+2. Add a **free [Gemini key](https://aistudio.google.com/apikey)** or your own Anthropic key. *Optional: with no AI key, the app still works fully on rule scores.*
+3. Run `npm install && npm run dev`, open http://localhost:3000/store, and click a **Demo shortcut** button (**Normal customer** or **Suspicious customer**) to fill in checkout.
+
+> Not deployed: Tripwire runs locally. There is no live URL.
+
+![Tripwire review queue: a live high-risk order (92/100) at the top, flagged red, above medium and low risk orders](docs/screenshots/queue.png)
+
+![Order drawer: the AI explains why the order is high risk, citing an address shared by 4 other names and an identical order already voided as fraud, with 6 linked orders](docs/screenshots/drawer.png)
+
 Tripwire is a review queue for small online merchants. Every PayPal order is **authorized** (funds held) but **not captured**. Code computes risk signals, an LLM explains the risk in plain English and links orders that look like the same person, and a **human** decides:
 
 - **Approve** → Tripwire **captures** the PayPal authorization. The money moves.
@@ -180,7 +192,9 @@ Find each account's email and password under **Testing Tools → Sandbox Account
 
 Use **Reset demo data** at any time to restore the seeded orders (live sandbox orders are kept).
 
-## Deploying to Render
+## Deploying to Render (optional, not deployed)
+
+> Tripwire is **not currently deployed**, so there is no live URL. These steps and `render.yaml` are provided in case you want to host your own copy.
 
 1. Push this repo to GitHub.
 2. In Render: **New → Blueprint**, select the repo. `render.yaml` defines a free web service named **tripwire** (`npm ci && npm run build`, then `npm start`).

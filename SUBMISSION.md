@@ -59,4 +59,4 @@ The AI never moves money on its own.
 
 ## Built with
 
-`paypal` · `paypal-orders-v2` · `paypal-payments-v2` · `paypal-js-sdk` · `anthropic` · `claude` · `gemini` · `ag-grid` · `nextjs` · `react` · `typescript` · `tailwindcss` · `zod` · `render`
+`paypal` · `paypal-orders-v2` · `paypal-payments-v2` · `paypal-js-sdk` · `anthropic` · `claude` · `gemini` · `ag-grid` · `nextjs` · `react` · `typescript` · `tailwindcss` · `zod`

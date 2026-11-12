@@ -6,9 +6,10 @@ import type { Order, OrderEvent } from "./types";
 // Simple JSON-file store. Good enough for a single-instance demo (e.g. Render free tier).
 // data/orders.json is created from data/seed.json on first use and can be reset.
 
-const DATA_DIR = path.join(process.cwd(), "data");
+// TRIPWIRE_DATA_DIR (optional) keeps runtime orders somewhere else, e.g. for a scratch copy.
+const DATA_DIR = process.env.TRIPWIRE_DATA_DIR || path.join(process.cwd(), "data");
 const ORDERS_FILE = path.join(DATA_DIR, "orders.json");
-const SEED_FILE = path.join(DATA_DIR, "seed.json");
+const SEED_FILE = path.join(process.cwd(), "data", "seed.json");
 
 let cache: Order[] | null = null;
 let writeChain: Promise<void> = Promise.resolve();
