@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.env
+.env.local
+.env*.local
+# Runtime order store (recreated from data/seed.json)
+data/orders.json
+npm-debug.log*
+.DS_Store
