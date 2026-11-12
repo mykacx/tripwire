@@ -13,10 +13,31 @@ const SEED_FILE = path.join(DATA_DIR, "seed.json");
 let cache: Order[] | null = null;
 let writeChain: Promise<void> = Promise.resolve();
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Load data/seed.json ({ generatedAt, orders }) and shift every timestamp forward by whole days,
+ * so the demo always looks recent ("last 14 days") while keeping each order's time of day.
+ */
 async function loadSeed(): Promise<Order[]> {
   try {
-    return JSON.parse(await fs.readFile(SEED_FILE, "utf8")) as Order[];
-  } catch {
+    const seed = JSON.parse(await fs.readFile(SEED_FILE, "utf8")) as { generatedAt: string; orders: Order[] };
+    const now = Date.now();
+    const days = Math.max(0, Math.floor((now - new Date(seed.generatedAt).getTime()) / DAY_MS));
+    return seed.orders.map((o) => {
+      // An order that would land in the future (later time of day than now) goes back one more day.
+      const d = new Date(o.updatedAt).getTime() + days * DAY_MS > now ? days - 1 : days;
+      const shift = (iso?: string) => (iso ? new Date(new Date(iso).getTime() + d * DAY_MS).toISOString() : iso);
+      return {
+        ...o,
+        createdAt: shift(o.createdAt)!,
+        updatedAt: shift(o.updatedAt)!,
+        paypal: { ...o.paypal, authorizationExpiresAt: shift(o.paypal.authorizationExpiresAt), honorPeriodEndsAt: shift(o.paypal.honorPeriodEndsAt) },
+        events: o.events.map((e) => ({ ...e, at: shift(e.at)! })),
+      };
+    });
+  } catch (err) {
+    console.error("[store] could not load seed.json", err);
     return [];
   }
 }

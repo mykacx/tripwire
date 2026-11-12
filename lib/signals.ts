@@ -1,6 +1,6 @@
 // Deterministic risk signals. Pure functions: same orders in → same signals out.
 // The AI reads these as evidence; the rule score is the fallback if the AI is unavailable.
-import type { Order, OrderView, RiskLevel, RuleResult, Severity, Signal } from "./types";
+import type { AiReview, Order, OrderView, RiskLevel, RuleResult, Severity, Signal } from "./types";
 
 const MIN = 60_000;
 const DAY = 24 * 60 * MIN;
@@ -225,6 +225,28 @@ export function computeSignals(order: Order, all: Order[]): { signals: Signal[];
   return { signals, rule: { score, level, medianTotal: med, multiple: Math.round(multiple * 10) / 10 } };
 }
 
-export function withSignals(order: Order, all: Order[]): OrderView {
-  return { ...order, ...computeSignals(order, all) };
+/** Deterministic review used when the AI hasn't run or is unavailable. */
+export function ruleReview(signals: Signal[], rule: RuleResult, error?: string): AiReview {
+  const fired = signals.filter((s) => s.severity !== "none").sort((a, b) => b.points - a.points);
+  const summary = fired.length
+    ? `Rule score ${rule.score}/100: ${fired.slice(0, 3).map((s) => s.label).join(", ")}.`
+    : `Rule score ${rule.score}/100: no risk signals fired.`;
+  return {
+    source: "rules",
+    risk_level: rule.level,
+    risk_score: rule.score,
+    summary,
+    reasons: (fired.length ? fired : signals).slice(0, 4).map((s) => s.text),
+    recommended_action: rule.level === "high" ? "void" : rule.level === "medium" ? "review" : "approve",
+    linked_order_ids: [...new Set(signals.find((s) => s.name === "shared_identity")?.relatedOrderIds ?? [])],
+    confidence: "low",
+    model: "rules",
+    reviewedAt: new Date().toISOString(),
+    error,
+  };
+}
+
+export function withSignals(order: Order, all: Order[], pending: ReadonlySet<string> = new Set()): OrderView {
+  const { signals, rule } = computeSignals(order, all);
+  return { ...order, signals, rule, review: order.ai ?? ruleReview(signals, rule), aiPending: pending.has(order.id) };
 }

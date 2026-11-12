@@ -76,6 +76,7 @@ export interface Order {
   currency: "USD";
   paypal: PayPalInfo;
   events: OrderEvent[];
+  ai?: AiReview; // latest AI review (or rule fallback if the AI call failed)
 }
 
 export interface CheckoutForm {
@@ -121,4 +122,22 @@ export interface RuleResult {
 export interface OrderView extends Order {
   signals: Signal[];
   rule: RuleResult;
+  review: AiReview; // order.ai, or a rule-based review if the AI hasn't run
+  aiPending: boolean;
+}
+
+// ---- AI review (Phase 3) ----
+
+export interface AiReview {
+  source: "ai" | "rules"; // "rules" = AI unavailable, deterministic fallback
+  risk_level: RiskLevel;
+  risk_score: number;
+  summary: string;
+  reasons: string[];
+  recommended_action: "approve" | "review" | "void";
+  linked_order_ids: string[];
+  confidence: "low" | "medium" | "high";
+  model: string;
+  reviewedAt: string;
+  error?: string;
 }
