@@ -1,1 +1,2266 @@
-[]
+{
+  "generatedAt": "2026-11-12T16:36:40.486Z",
+  "orders": [
+    {
+      "id": "TW-D001A2",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-10-31T02:00:00.000Z",
+      "updatedAt": "2026-10-31T03:35:00.000Z",
+      "customer": {
+        "name": "Priya Nair",
+        "email": "priya.nair@example.com",
+        "phone": "+65 9100 2000"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "10 Tampines Avenue 1",
+        "line2": "#01-10",
+        "postalCode": "520100"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A2",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A2",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-11-29T02:00:00.000Z",
+        "honorPeriodEndsAt": "2026-11-03T02:00:00.000Z",
+        "payerId": "DEMOPAYER001A2",
+        "payerEmail": "priya.nair@example.com",
+        "payerName": "Priya Nair",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-10-31T02:00:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-10-31T03:35:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A3",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-10-31T07:07:00.000Z",
+      "updatedAt": "2026-10-31T08:42:00.000Z",
+      "customer": {
+        "name": "Marcus Lim",
+        "email": "marcus.lim@example.com",
+        "phone": "+65 9137 2173"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "13 Tampines Avenue 2",
+        "line2": "#02-11",
+        "postalCode": "520111"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 35,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A3",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A3",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-11-29T07:07:00.000Z",
+        "honorPeriodEndsAt": "2026-11-03T07:07:00.000Z",
+        "payerId": "DEMOPAYER001A3",
+        "payerEmail": "marcus.lim@example.com",
+        "payerName": "Marcus Lim",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-10-31T07:07:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $35.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-10-31T08:42:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A4",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-01T03:14:00.000Z",
+      "updatedAt": "2026-11-01T04:49:00.000Z",
+      "customer": {
+        "name": "Hannah Goh",
+        "email": "hannah.goh@example.com",
+        "phone": "+65 9174 2346"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "16 Tampines Avenue 3",
+        "line2": "#03-12",
+        "postalCode": "520122"
+      },
+      "items": [
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 48,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A4",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A4",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-11-30T03:14:00.000Z",
+        "honorPeriodEndsAt": "2026-11-04T03:14:00.000Z",
+        "payerId": "DEMOPAYER001A4",
+        "payerEmail": "hannah.goh@example.com",
+        "payerName": "Hannah Goh",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-01T03:14:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $48.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-01T04:49:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A5",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-01T11:21:00.000Z",
+      "updatedAt": "2026-11-01T12:56:00.000Z",
+      "customer": {
+        "name": "Rahul Menon",
+        "email": "rahul.menon@example.com",
+        "phone": "+65 9211 2519"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "19 Tampines Avenue 4",
+        "line2": "#04-13",
+        "postalCode": "520133"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 2
+        }
+      ],
+      "total": 30,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A5",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A5",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-11-30T11:21:00.000Z",
+        "honorPeriodEndsAt": "2026-11-04T11:21:00.000Z",
+        "payerId": "DEMOPAYER001A5",
+        "payerEmail": "rahul.menon@example.com",
+        "payerName": "Rahul Menon",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-01T11:21:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $30.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-01T12:56:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A6",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-02T06:28:00.000Z",
+      "updatedAt": "2026-11-02T08:03:00.000Z",
+      "customer": {
+        "name": "Sofia Tan",
+        "email": "sofia.tan@example.com",
+        "phone": "+65 9248 2340"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "25 Tampines Avenue 5",
+        "line2": "#05-14",
+        "postalCode": "520144"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 35,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A6",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A6",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-01T06:28:00.000Z",
+        "honorPeriodEndsAt": "2026-11-05T06:28:00.000Z",
+        "payerId": "DEMOPAYERSOF01",
+        "payerEmail": "sofia.tan@example.com",
+        "payerName": "Sofia Tan",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-02T06:28:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $35.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-02T08:03:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A7",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-02T12:35:00.000Z",
+      "updatedAt": "2026-11-02T14:10:00.000Z",
+      "customer": {
+        "name": "Ethan Ong",
+        "email": "ethan.ong@example.com",
+        "phone": "+65 9285 2865"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "25 Tampines Avenue 6",
+        "line2": "#06-15",
+        "postalCode": "520155"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 3
+        }
+      ],
+      "total": 45,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A7",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A7",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-01T12:35:00.000Z",
+        "honorPeriodEndsAt": "2026-11-05T12:35:00.000Z",
+        "payerId": "DEMOPAYER001A7",
+        "payerEmail": "ethan.ong@example.com",
+        "payerName": "Ethan Ong",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-02T12:35:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $45.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-02T14:10:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A8",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-03T01:42:00.000Z",
+      "updatedAt": "2026-11-03T03:17:00.000Z",
+      "customer": {
+        "name": "Nurul Aziz",
+        "email": "nurul.aziz@example.com",
+        "phone": "+65 9322 3038"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "28 Tampines Avenue 7",
+        "line2": "#07-16",
+        "postalCode": "520166"
+      },
+      "items": [
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 48,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A8",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A8",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-02T01:42:00.000Z",
+        "honorPeriodEndsAt": "2026-11-06T01:42:00.000Z",
+        "payerId": "DEMOPAYER001A8",
+        "payerEmail": "nurul.aziz@example.com",
+        "payerName": "Nurul Aziz",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-03T01:42:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $48.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-03T03:17:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001A9",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-03T08:49:00.000Z",
+      "updatedAt": "2026-11-03T10:24:00.000Z",
+      "customer": {
+        "name": "Jacob Lee",
+        "email": "jacob.lee@example.com",
+        "phone": "+65 9359 3211"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "31 Tampines Avenue 8",
+        "line2": "#08-17",
+        "postalCode": "520177"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        },
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 50,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001A9",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001A9",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-02T08:49:00.000Z",
+        "honorPeriodEndsAt": "2026-11-06T08:49:00.000Z",
+        "payerId": "DEMOPAYER001A9",
+        "payerEmail": "jacob.lee@example.com",
+        "payerName": "Jacob Lee",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-03T08:49:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $50.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-03T10:24:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001AA",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-04T04:56:00.000Z",
+      "updatedAt": "2026-11-04T06:31:00.000Z",
+      "customer": {
+        "name": "Mei Lin Chua",
+        "email": "mei.lin.chua@example.com",
+        "phone": "+65 9248 0611"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "35 Tampines Avenue 9",
+        "line2": "#08-18",
+        "postalCode": "520188"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 35,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001AA",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001AA",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-03T04:56:00.000Z",
+        "honorPeriodEndsAt": "2026-11-07T04:56:00.000Z",
+        "payerId": "DEMOPAYERMLC01",
+        "payerEmail": "mei.lin.chua@example.com",
+        "payerName": "Mei Lin Chua",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-04T04:56:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $35.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-04T06:31:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001AB",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-04T13:03:00.000Z",
+      "updatedAt": "2026-11-04T14:38:00.000Z",
+      "customer": {
+        "name": "Arjun Pillai",
+        "email": "arjun.pillai@example.com",
+        "phone": "+65 9433 3557"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "37 Tampines Avenue 1",
+        "line2": "#01-19",
+        "postalCode": "520199"
+      },
+      "items": [
+        {
+          "sku": "SPEAKER-BT",
+          "name": "Bluetooth Speaker",
+          "unitPrice": 79,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 79,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001AB",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001AB",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-03T13:03:00.000Z",
+        "honorPeriodEndsAt": "2026-11-07T13:03:00.000Z",
+        "payerId": "DEMOPAYER001AB",
+        "payerEmail": "arjun.pillai@example.com",
+        "payerName": "Arjun Pillai",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-04T13:03:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $79.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-04T14:38:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001AC",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-05T05:10:00.000Z",
+      "updatedAt": "2026-11-05T06:45:00.000Z",
+      "customer": {
+        "name": "Grace Wong",
+        "email": "grace.wong@example.com",
+        "phone": "+65 9470 3730"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "40 Tampines Avenue 2",
+        "line2": "#02-20",
+        "postalCode": "520210"
+      },
+      "items": [
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 48,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001AC",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001AC",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-04T05:10:00.000Z",
+        "honorPeriodEndsAt": "2026-11-08T05:10:00.000Z",
+        "payerId": "DEMOPAYER001AC",
+        "payerEmail": "grace.wong@example.com",
+        "payerName": "Grace Wong",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-05T05:10:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $48.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-05T06:45:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001AD",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-05T10:17:00.000Z",
+      "updatedAt": "2026-11-05T11:52:00.000Z",
+      "customer": {
+        "name": "Daniel Yeo",
+        "email": "daniel.yeo@example.com",
+        "phone": "+65 9507 3903"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "43 Tampines Avenue 3",
+        "line2": "#03-21",
+        "postalCode": "520221"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 2
+        }
+      ],
+      "total": 30,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001AD",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001AD",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-04T10:17:00.000Z",
+        "honorPeriodEndsAt": "2026-11-08T10:17:00.000Z",
+        "payerId": "DEMOPAYER001AD",
+        "payerEmail": "daniel.yeo@example.com",
+        "payerName": "Daniel Yeo",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-05T10:17:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $30.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-05T11:52:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001AE",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-06T02:24:00.000Z",
+      "updatedAt": "2026-11-06T03:59:00.000Z",
+      "customer": {
+        "name": "Aiden Teo",
+        "email": "aiden.teo@example.com",
+        "phone": "+65 9544 4076"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "46 Tampines Avenue 4",
+        "line2": "#04-22",
+        "postalCode": "520232"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 35,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001AE",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001AE",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-05T02:24:00.000Z",
+        "honorPeriodEndsAt": "2026-11-09T02:24:00.000Z",
+        "payerId": "DEMOPAYER001AE",
+        "payerEmail": "aiden.teo@example.com",
+        "payerName": "Aiden Teo",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-06T02:24:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $35.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-06T03:59:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001AF",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-06T07:31:00.000Z",
+      "updatedAt": "2026-11-06T09:06:00.000Z",
+      "customer": {
+        "name": "Chloe Ng",
+        "email": "chloe.ng@example.com",
+        "phone": "+65 9581 4249"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "49 Tampines Avenue 5",
+        "line2": "#05-23",
+        "postalCode": "520243"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 3
+        }
+      ],
+      "total": 45,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001AF",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001AF",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-05T07:31:00.000Z",
+        "honorPeriodEndsAt": "2026-11-09T07:31:00.000Z",
+        "payerId": "DEMOPAYER001AF",
+        "payerEmail": "chloe.ng@example.com",
+        "payerName": "Chloe Ng",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-06T07:31:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $45.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-06T09:06:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B0",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-07T12:38:00.000Z",
+      "updatedAt": "2026-11-07T14:13:00.000Z",
+      "customer": {
+        "name": "Faizal Hamid",
+        "email": "faizal.hamid@example.com",
+        "phone": "+65 9618 4422"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "52 Tampines Avenue 6",
+        "line2": "#06-24",
+        "postalCode": "520254"
+      },
+      "items": [
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 48,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B0",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B0",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-06T12:38:00.000Z",
+        "honorPeriodEndsAt": "2026-11-10T12:38:00.000Z",
+        "payerId": "DEMOPAYER001B0",
+        "payerEmail": "faizal.hamid@example.com",
+        "payerName": "Faizal Hamid",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-07T12:38:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $48.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-07T14:13:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B1",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-07T03:45:00.000Z",
+      "updatedAt": "2026-11-07T05:20:00.000Z",
+      "customer": {
+        "name": "Isabel Cruz",
+        "email": "isabel.cruz@example.com",
+        "phone": "+65 9655 4595"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "55 Tampines Avenue 7",
+        "line2": "#07-25",
+        "postalCode": "520265"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        },
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 63,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B1",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B1",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-06T03:45:00.000Z",
+        "honorPeriodEndsAt": "2026-11-10T03:45:00.000Z",
+        "payerId": "DEMOPAYER001B1",
+        "payerEmail": "isabel.cruz@example.com",
+        "payerName": "Isabel Cruz",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-07T03:45:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $63.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-07T05:20:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B2",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-08T11:52:00.000Z",
+      "updatedAt": "2026-11-08T13:27:00.000Z",
+      "customer": {
+        "name": "Mei Lin Chua",
+        "email": "mei.lin.chua@example.com",
+        "phone": "+65 9248 0611"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "35 Tampines Avenue 9",
+        "line2": "#08-18",
+        "postalCode": "520188"
+      },
+      "items": [
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 48,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B2",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B2",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-07T11:52:00.000Z",
+        "honorPeriodEndsAt": "2026-11-11T11:52:00.000Z",
+        "payerId": "DEMOPAYERMLC01",
+        "payerEmail": "mei.lin.chua@example.com",
+        "payerName": "Mei Lin Chua",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-08T11:52:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $48.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-08T13:27:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B3",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-08T06:59:00.000Z",
+      "updatedAt": "2026-11-08T08:34:00.000Z",
+      "customer": {
+        "name": "Kevin Sim",
+        "email": "kevin.sim@example.com",
+        "phone": "+65 9729 4941"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "61 Tampines Avenue 9",
+        "line2": "#09-27",
+        "postalCode": "520287"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 2
+        }
+      ],
+      "total": 70,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B3",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B3",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-07T06:59:00.000Z",
+        "honorPeriodEndsAt": "2026-11-11T06:59:00.000Z",
+        "payerId": "DEMOPAYER001B3",
+        "payerEmail": "kevin.sim@example.com",
+        "payerName": "Kevin Sim",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-08T06:59:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $70.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-08T08:34:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B4",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-09T04:06:00.000Z",
+      "updatedAt": "2026-11-09T05:41:00.000Z",
+      "customer": {
+        "name": "Lauren Ho",
+        "email": "lauren.ho@example.com",
+        "phone": "+65 9766 5114"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "64 Tampines Avenue 1",
+        "line2": "#01-28",
+        "postalCode": "520298"
+      },
+      "items": [
+        {
+          "sku": "SPEAKER-BT",
+          "name": "Bluetooth Speaker",
+          "unitPrice": 79,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 79,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B4",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B4",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-08T04:06:00.000Z",
+        "honorPeriodEndsAt": "2026-11-12T04:06:00.000Z",
+        "payerId": "DEMOPAYER001B4",
+        "payerEmail": "lauren.ho@example.com",
+        "payerName": "Lauren Ho",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-09T04:06:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $79.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-09T05:41:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B5",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-09T09:13:00.000Z",
+      "updatedAt": "2026-11-09T10:48:00.000Z",
+      "customer": {
+        "name": "Siti Rahim",
+        "email": "siti.rahim@example.com",
+        "phone": "+65 9803 5287"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "67 Tampines Avenue 2",
+        "line2": "#02-29",
+        "postalCode": "520309"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 2
+        }
+      ],
+      "total": 30,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B5",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B5",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-08T09:13:00.000Z",
+        "honorPeriodEndsAt": "2026-11-12T09:13:00.000Z",
+        "payerId": "DEMOPAYER001B5",
+        "payerEmail": "siti.rahim@example.com",
+        "payerName": "Siti Rahim",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-09T09:13:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $30.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-09T10:48:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B6",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-10T02:20:00.000Z",
+      "updatedAt": "2026-11-10T03:55:00.000Z",
+      "customer": {
+        "name": "Ryan Koh",
+        "email": "ryan.koh@example.com",
+        "phone": "+65 9840 5460"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "70 Tampines Avenue 3",
+        "line2": "#03-30",
+        "postalCode": "520320"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        },
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 83,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B6",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B6",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-09T02:20:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T02:20:00.000Z",
+        "payerId": "DEMOPAYER001B6",
+        "payerEmail": "ryan.koh@example.com",
+        "payerName": "Ryan Koh",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T02:20:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $83.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T03:55:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B7",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-10T14:27:00.000Z",
+      "updatedAt": "2026-11-10T16:02:00.000Z",
+      "customer": {
+        "name": "Wen Hui Lau",
+        "email": "wen.hui.lau@example.com",
+        "phone": "+65 9877 5633"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "73 Tampines Avenue 4",
+        "line2": "#04-31",
+        "postalCode": "520331"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 35,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B7",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B7",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-09T14:27:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T14:27:00.000Z",
+        "payerId": "DEMOPAYER001B7",
+        "payerEmail": "wen.hui.lau@example.com",
+        "payerName": "Wen Hui Lau",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T14:27:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $35.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T16:02:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B8",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-11T05:34:00.000Z",
+      "updatedAt": "2026-11-11T07:09:00.000Z",
+      "customer": {
+        "name": "Vikram Rao",
+        "email": "vikram.rao@example.com",
+        "phone": "+65 9914 5806"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "76 Tampines Avenue 5",
+        "line2": "#05-32",
+        "postalCode": "520342"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        },
+        {
+          "sku": "SPEAKER-BT",
+          "name": "Bluetooth Speaker",
+          "unitPrice": 79,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 94,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B8",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B8",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-10T05:34:00.000Z",
+        "honorPeriodEndsAt": "2026-11-14T05:34:00.000Z",
+        "payerId": "DEMOPAYER001B8",
+        "payerEmail": "vikram.rao@example.com",
+        "payerName": "Vikram Rao",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-11T05:34:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $94.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-11T07:09:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001B9",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-12T03:41:00.000Z",
+      "updatedAt": "2026-11-12T05:16:00.000Z",
+      "customer": {
+        "name": "Amelia Foo",
+        "email": "amelia.foo@example.com",
+        "phone": "+65 9951 5979"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "79 Tampines Avenue 6",
+        "line2": "#06-33",
+        "postalCode": "520353"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001B9",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001B9",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-11T03:41:00.000Z",
+        "honorPeriodEndsAt": "2026-11-15T03:41:00.000Z",
+        "payerId": "DEMOPAYER001B9",
+        "payerEmail": "amelia.foo@example.com",
+        "payerName": "Amelia Foo",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-12T03:41:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-12T05:16:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001BA",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-12T08:48:00.000Z",
+      "updatedAt": "2026-11-12T10:23:00.000Z",
+      "customer": {
+        "name": "Joel Seah",
+        "email": "joel.seah@example.com",
+        "phone": "+65 9988 6152"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "82 Tampines Avenue 7",
+        "line2": "#07-34",
+        "postalCode": "520364"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 3
+        }
+      ],
+      "total": 45,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001BA",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001BA",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-11T08:48:00.000Z",
+        "honorPeriodEndsAt": "2026-11-15T08:48:00.000Z",
+        "payerId": "DEMOPAYER001BA",
+        "payerEmail": "joel.seah@example.com",
+        "payerName": "Joel Seah",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-12T08:48:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $45.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-12T10:23:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001BB",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-07T06:22:00.000Z",
+      "updatedAt": "2026-11-07T07:57:00.000Z",
+      "customer": {
+        "name": "Daniel Koh",
+        "email": "dkoh.deals@example.net",
+        "phone": "+65 8123 4401"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "88 Jalan Bukit Merah",
+        "line2": "#05-12",
+        "postalCode": "150088"
+      },
+      "items": [
+        {
+          "sku": "GIFT-100",
+          "name": "Digital Gift Card $100",
+          "unitPrice": 100,
+          "category": "gift_card",
+          "quantity": 2
+        }
+      ],
+      "total": 200,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001BB",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001BB",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-06T06:22:00.000Z",
+        "honorPeriodEndsAt": "2026-11-10T06:22:00.000Z",
+        "payerId": "DEMOPAYER001BB",
+        "payerEmail": "dkoh.deals@example.net",
+        "payerName": "Daniel Koh",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-07T06:22:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $200.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-07T07:57:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001BC",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-09T08:05:00.000Z",
+      "updatedAt": "2026-11-09T09:40:00.000Z",
+      "customer": {
+        "name": "Aisha Rahman",
+        "email": "aisha.r.gifts@example.org",
+        "phone": "+65 8123 7788"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "88 Jln Bukit Merah #05-12",
+        "postalCode": "150088"
+      },
+      "items": [
+        {
+          "sku": "GIFT-250",
+          "name": "Digital Gift Card $250",
+          "unitPrice": 250,
+          "category": "gift_card",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001BC",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001BC",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-08T08:05:00.000Z",
+        "honorPeriodEndsAt": "2026-11-12T08:05:00.000Z",
+        "payerId": "DEMOPAYER001BC",
+        "payerEmail": "aisha.r.gifts@example.org",
+        "payerName": "Aisha Rahman",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-09T08:05:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $250.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-09T09:40:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001BD",
+      "demo": true,
+      "status": "voided",
+      "createdAt": "2026-11-11T07:48:00.000Z",
+      "updatedAt": "2026-11-11T08:28:00.000Z",
+      "customer": {
+        "name": "Wei Jie Tan",
+        "email": "wj.tan.88@example.com",
+        "phone": "+65 8123 7788"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "88, Jalan Bukit Merah",
+        "line2": "05-12",
+        "postalCode": "150088"
+      },
+      "note": "pls send codes asap",
+      "items": [
+        {
+          "sku": "GIFT-250",
+          "name": "Digital Gift Card $250",
+          "unitPrice": 250,
+          "category": "gift_card",
+          "quantity": 2
+        },
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 515,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001BD",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001BD",
+        "authorizationStatus": "VOIDED",
+        "authorizationExpiresAt": "2026-12-10T07:48:00.000Z",
+        "honorPeriodEndsAt": "2026-11-14T07:48:00.000Z",
+        "payerId": "DEMOPAYER001BD",
+        "payerEmail": "wj.tan.88@example.com",
+        "payerName": "Wei Jie Tan",
+        "payerCountry": "BR"
+      },
+      "events": [
+        {
+          "at": "2026-11-11T07:48:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $515.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-11T08:28:00.000Z",
+          "type": "voided",
+          "actor": "human",
+          "message": "Voided by reviewer — authorization released, no money moved. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001BE",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-10T19:10:00.000Z",
+      "updatedAt": "2026-11-10T20:45:00.000Z",
+      "customer": {
+        "name": "J Smith",
+        "email": "qa.buyer.7731@example.net",
+        "phone": "+1 415 555 0142"
+      },
+      "shipping": {
+        "city": "Oakland",
+        "countryCode": "US",
+        "line1": "1200 Harbor Blvd",
+        "line2": "Apt 4",
+        "state": "CA",
+        "postalCode": "94607"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001BE",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001BE",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-09T19:10:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T19:10:00.000Z",
+        "payerId": "DEMOPAYER001BE",
+        "payerEmail": "qa.buyer.7731@example.net",
+        "payerName": "J Smith",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T19:10:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T20:45:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001BF",
+      "demo": true,
+      "status": "approved",
+      "createdAt": "2026-11-10T19:11:00.000Z",
+      "updatedAt": "2026-11-10T20:46:00.000Z",
+      "customer": {
+        "name": "J Smith",
+        "email": "qa.buyer.7731@example.net",
+        "phone": "+1 415 555 0142"
+      },
+      "shipping": {
+        "city": "Oakland",
+        "countryCode": "US",
+        "line1": "1200 Harbor Blvd",
+        "line2": "Apt 5",
+        "state": "CA",
+        "postalCode": "94607"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001BF",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001BF",
+        "authorizationStatus": "CAPTURED",
+        "authorizationExpiresAt": "2026-12-09T19:11:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T19:11:00.000Z",
+        "payerId": "DEMOPAYER001BF",
+        "payerEmail": "qa.buyer.7731@example.net",
+        "payerName": "J Smith",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T19:11:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T20:46:00.000Z",
+          "type": "approved",
+          "actor": "human",
+          "message": "Approved by reviewer and captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C0",
+      "demo": true,
+      "status": "voided",
+      "createdAt": "2026-11-10T19:13:00.000Z",
+      "updatedAt": "2026-11-10T19:53:00.000Z",
+      "customer": {
+        "name": "J Smith",
+        "email": "qa.buyer.7731@example.net",
+        "phone": "+1 415 555 0142"
+      },
+      "shipping": {
+        "city": "Oakland",
+        "countryCode": "US",
+        "line1": "1200 Harbor Blvd",
+        "line2": "Apt 6",
+        "state": "CA",
+        "postalCode": "94607"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C0",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C0",
+        "authorizationStatus": "VOIDED",
+        "authorizationExpiresAt": "2026-12-09T19:13:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T19:13:00.000Z",
+        "payerId": "DEMOPAYER001C0",
+        "payerEmail": "qa.buyer.7731@example.net",
+        "payerName": "J Smith",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T19:13:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T19:53:00.000Z",
+          "type": "voided",
+          "actor": "human",
+          "message": "Voided by reviewer — authorization released, no money moved. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C1",
+      "demo": true,
+      "status": "voided",
+      "createdAt": "2026-11-10T19:15:00.000Z",
+      "updatedAt": "2026-11-10T19:55:00.000Z",
+      "customer": {
+        "name": "J Smith",
+        "email": "qa.buyer.7731@example.net",
+        "phone": "+1 415 555 0142"
+      },
+      "shipping": {
+        "city": "Oakland",
+        "countryCode": "US",
+        "line1": "1200 Harbor Blvd",
+        "line2": "Apt 7",
+        "state": "CA",
+        "postalCode": "94607"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C1",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C1",
+        "authorizationStatus": "VOIDED",
+        "authorizationExpiresAt": "2026-12-09T19:15:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T19:15:00.000Z",
+        "payerId": "DEMOPAYER001C1",
+        "payerEmail": "qa.buyer.7731@example.net",
+        "payerName": "J Smith",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T19:15:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T19:55:00.000Z",
+          "type": "voided",
+          "actor": "human",
+          "message": "Voided by reviewer — authorization released, no money moved. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C2",
+      "demo": true,
+      "status": "voided",
+      "createdAt": "2026-11-10T19:17:00.000Z",
+      "updatedAt": "2026-11-10T19:57:00.000Z",
+      "customer": {
+        "name": "J Smith",
+        "email": "qa.buyer.7731@example.net",
+        "phone": "+1 415 555 0142"
+      },
+      "shipping": {
+        "city": "Oakland",
+        "countryCode": "US",
+        "line1": "1200 Harbor Blvd",
+        "line2": "Apt 8",
+        "state": "CA",
+        "postalCode": "94607"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C2",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C2",
+        "authorizationStatus": "VOIDED",
+        "authorizationExpiresAt": "2026-12-09T19:17:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T19:17:00.000Z",
+        "payerId": "DEMOPAYER001C2",
+        "payerEmail": "qa.buyer.7731@example.net",
+        "payerName": "J Smith",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T19:17:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T19:57:00.000Z",
+          "type": "voided",
+          "actor": "human",
+          "message": "Voided by reviewer — authorization released, no money moved. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C3",
+      "demo": true,
+      "status": "voided",
+      "createdAt": "2026-11-10T19:19:00.000Z",
+      "updatedAt": "2026-11-10T19:59:00.000Z",
+      "customer": {
+        "name": "J Smith",
+        "email": "qa.buyer.7731@example.net",
+        "phone": "+1 415 555 0142"
+      },
+      "shipping": {
+        "city": "Oakland",
+        "countryCode": "US",
+        "line1": "1200 Harbor Blvd",
+        "line2": "Apt 9",
+        "state": "CA",
+        "postalCode": "94607"
+      },
+      "items": [
+        {
+          "sku": "CABLE-USBC",
+          "name": "USB-C Cable Pack",
+          "unitPrice": 15,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C3",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C3",
+        "authorizationStatus": "VOIDED",
+        "authorizationExpiresAt": "2026-12-09T19:19:00.000Z",
+        "honorPeriodEndsAt": "2026-11-13T19:19:00.000Z",
+        "payerId": "DEMOPAYER001C3",
+        "payerEmail": "qa.buyer.7731@example.net",
+        "payerName": "J Smith",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-10T19:19:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $15.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-10T19:59:00.000Z",
+          "type": "voided",
+          "actor": "human",
+          "message": "Voided by reviewer — authorization released, no money moved. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C4",
+      "demo": true,
+      "status": "voided",
+      "createdAt": "2026-11-07T18:41:00.000Z",
+      "updatedAt": "2026-11-07T19:21:00.000Z",
+      "customer": {
+        "name": "Michael Brandt",
+        "email": "m.brandt.office@example.com",
+        "phone": "+234 803 555 0199"
+      },
+      "shipping": {
+        "city": "Lagos",
+        "countryCode": "NG",
+        "line1": "14 Admiralty Way",
+        "line2": "Lekki Phase 1",
+        "state": "Lagos",
+        "postalCode": "106104"
+      },
+      "note": "Ship express, will pay any fee",
+      "items": [
+        {
+          "sku": "LAPTOP-PRO",
+          "name": "Pro Laptop",
+          "unitPrice": 900,
+          "category": "electronics",
+          "quantity": 2
+        }
+      ],
+      "total": 1800,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C4",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C4",
+        "authorizationStatus": "VOIDED",
+        "authorizationExpiresAt": "2026-12-06T18:41:00.000Z",
+        "honorPeriodEndsAt": "2026-11-10T18:41:00.000Z",
+        "payerId": "DEMOPAYER001C4",
+        "payerEmail": "m.brandt.office@example.com",
+        "payerName": "Michael Brandt",
+        "payerCountry": "US"
+      },
+      "events": [
+        {
+          "at": "2026-11-07T18:41:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $1800.00. Funds held, not captured. (demo data)"
+        },
+        {
+          "at": "2026-11-07T19:21:00.000Z",
+          "type": "voided",
+          "actor": "human",
+          "message": "Voided by reviewer — authorization released, no money moved. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C5",
+      "demo": true,
+      "status": "needs_review",
+      "createdAt": "2026-11-11T18:37:00.000Z",
+      "updatedAt": "2026-11-11T18:37:00.000Z",
+      "customer": {
+        "name": "Liam Chen",
+        "email": "liam.chen.sg@example.com",
+        "phone": "+65 9732 1180"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "21 Pasir Ris Drive 3",
+        "line2": "#11-04",
+        "postalCode": "519498"
+      },
+      "items": [
+        {
+          "sku": "GIFT-100",
+          "name": "Digital Gift Card $100",
+          "unitPrice": 100,
+          "category": "gift_card",
+          "quantity": 1
+        }
+      ],
+      "total": 100,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C5",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C5",
+        "authorizationStatus": "CREATED",
+        "authorizationExpiresAt": "2026-12-10T18:37:00.000Z",
+        "honorPeriodEndsAt": "2026-11-14T18:37:00.000Z",
+        "payerId": "DEMOPAYER001C5",
+        "payerEmail": "liam.chen.sg@example.com",
+        "payerName": "Liam Chen",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-11T18:37:00.000Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $100.00. Funds held, not captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C6",
+      "demo": true,
+      "status": "needs_review",
+      "createdAt": "2026-11-12T13:31:40.486Z",
+      "updatedAt": "2026-11-12T13:31:40.486Z",
+      "customer": {
+        "name": "Mei Lin Chua",
+        "email": "mei.lin.chua@example.com",
+        "phone": "+65 9248 0611"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "35 Tampines Avenue 9",
+        "line2": "#08-18",
+        "postalCode": "520188"
+      },
+      "items": [
+        {
+          "sku": "LAPTOP-PRO",
+          "name": "Pro Laptop",
+          "unitPrice": 900,
+          "category": "electronics",
+          "quantity": 1
+        }
+      ],
+      "total": 900,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C6",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C6",
+        "authorizationStatus": "CREATED",
+        "authorizationExpiresAt": "2026-12-11T13:31:40.486Z",
+        "honorPeriodEndsAt": "2026-11-15T13:31:40.486Z",
+        "payerId": "DEMOPAYERMLC01",
+        "payerEmail": "mei.lin.chua@example.com",
+        "payerName": "Mei Lin Chua",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-12T13:31:40.486Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $900.00. Funds held, not captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C7",
+      "demo": true,
+      "status": "needs_review",
+      "createdAt": "2026-11-12T14:26:40.486Z",
+      "updatedAt": "2026-11-12T14:26:40.486Z",
+      "customer": {
+        "name": "Oliver Hughes",
+        "email": "oliver.hughes@example.co.uk",
+        "phone": "+44 7700 900412"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "8 Marina Boulevard",
+        "line2": "#22-01",
+        "postalCode": "018981"
+      },
+      "note": "Gift for my sister, she lives here",
+      "items": [
+        {
+          "sku": "LAMP-DESK",
+          "name": "Desk Lamp",
+          "unitPrice": 48,
+          "category": "normal",
+          "quantity": 2
+        },
+        {
+          "sku": "SPEAKER-BT",
+          "name": "Bluetooth Speaker",
+          "unitPrice": 79,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 175,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C7",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C7",
+        "authorizationStatus": "CREATED",
+        "authorizationExpiresAt": "2026-12-11T14:26:40.486Z",
+        "honorPeriodEndsAt": "2026-11-15T14:26:40.486Z",
+        "payerId": "DEMOPAYER001C7",
+        "payerEmail": "oliver.hughes@example.co.uk",
+        "payerName": "Oliver Hughes",
+        "payerCountry": "GB"
+      },
+      "events": [
+        {
+          "at": "2026-11-12T14:26:40.486Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $175.00. Funds held, not captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C8",
+      "demo": true,
+      "status": "needs_review",
+      "createdAt": "2026-11-12T15:21:40.486Z",
+      "updatedAt": "2026-11-12T15:21:40.486Z",
+      "customer": {
+        "name": "Hafiz Ismail",
+        "email": "hafiz.ismail@example.my",
+        "phone": "+60 12 345 6789"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "5 Woodlands Square",
+        "line2": "#03-02",
+        "postalCode": "737714"
+      },
+      "items": [
+        {
+          "sku": "SPEAKER-BT",
+          "name": "Bluetooth Speaker",
+          "unitPrice": 79,
+          "category": "normal",
+          "quantity": 3
+        }
+      ],
+      "total": 237,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C8",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C8",
+        "authorizationStatus": "CREATED",
+        "authorizationExpiresAt": "2026-12-11T15:21:40.486Z",
+        "honorPeriodEndsAt": "2026-11-15T15:21:40.486Z",
+        "payerId": "DEMOPAYER001C8",
+        "payerEmail": "hafiz.ismail@example.my",
+        "payerName": "Hafiz Ismail",
+        "payerCountry": "MY"
+      },
+      "events": [
+        {
+          "at": "2026-11-12T15:21:40.486Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $237.00. Funds held, not captured. (demo data)"
+        }
+      ]
+    },
+    {
+      "id": "TW-D001C9",
+      "demo": true,
+      "status": "needs_review",
+      "createdAt": "2026-11-12T16:11:40.486Z",
+      "updatedAt": "2026-11-12T16:11:40.486Z",
+      "customer": {
+        "name": "Sofia Tan",
+        "email": "sofia.tan@example.com",
+        "phone": "+65 9248 2340"
+      },
+      "shipping": {
+        "city": "Singapore",
+        "countryCode": "SG",
+        "line1": "25 Tampines Avenue 5",
+        "line2": "#05-14",
+        "postalCode": "520144"
+      },
+      "items": [
+        {
+          "sku": "MOUSE-WL",
+          "name": "Wireless Mouse",
+          "unitPrice": 35,
+          "category": "normal",
+          "quantity": 1
+        }
+      ],
+      "total": 35,
+      "currency": "USD",
+      "paypal": {
+        "orderId": "DEMO-ORDER-D001C9",
+        "orderStatus": "COMPLETED",
+        "authorizationId": "DEMO-AUTH-D001C9",
+        "authorizationStatus": "CREATED",
+        "authorizationExpiresAt": "2026-12-11T16:11:40.486Z",
+        "honorPeriodEndsAt": "2026-11-15T16:11:40.486Z",
+        "payerId": "DEMOPAYERSOF01",
+        "payerEmail": "sofia.tan@example.com",
+        "payerName": "Sofia Tan",
+        "payerCountry": "SG"
+      },
+      "events": [
+        {
+          "at": "2026-11-12T16:11:40.486Z",
+          "type": "authorized",
+          "actor": "paypal",
+          "message": "PayPal authorized $35.00. Funds held, not captured. (demo data)"
+        }
+      ]
+    }
+  ]
+}
