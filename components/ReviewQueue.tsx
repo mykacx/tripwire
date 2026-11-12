@@ -61,6 +61,7 @@ const isToday = (iso: string) => {
 
 export default function ReviewQueue() {
   const [orders, setOrders] = useState<OrderView[]>([]);
+  const [ai, setAi] = useState<{ enabled: boolean; provider?: string; model?: string } | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [now, setNow] = useState(() => Date.now());
   const [tab, setTab] = useState<Tab>("needs_review");
@@ -84,6 +85,7 @@ export default function ReviewQueue() {
       const res = await fetch("/api/orders", { cache: "no-store" });
       const data = await res.json();
       setOrders(data.orders);
+      setAi(data.ai);
       setNow(Date.now());
       setLoaded(true);
     } catch {
@@ -235,6 +237,11 @@ export default function ReviewQueue() {
             </div>
           </div>
           <div className="flex items-center gap-2">
+            {ai?.enabled && (
+              <span className="rounded-md bg-violet-50 px-2.5 py-1 text-xs font-medium text-violet-700 ring-1 ring-inset ring-violet-200" title="Model used for AI risk reviews">
+                AI: {ai.model}
+              </span>
+            )}
             <button onClick={resetDemo} className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 ring-1 ring-inset ring-slate-300 hover:bg-slate-50">
               Reset demo data
             </button>
@@ -246,6 +253,14 @@ export default function ReviewQueue() {
       </header>
 
       <main className="mx-auto flex w-full max-w-[1800px] flex-1 flex-col gap-4 px-6 py-5">
+        {ai && !ai.enabled && (
+          <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
+            <b>AI unavailable</b>: no AI key is configured, so orders show deterministic rule scores only. Set{" "}
+            <code className="rounded bg-amber-100 px-1">ANTHROPIC_API_KEY</code> (or{" "}
+            <code className="rounded bg-amber-100 px-1">GEMINI_API_KEY</code> for Google&apos;s free tier) in <code className="rounded bg-amber-100 px-1">.env.local</code> and restart to enable AI review.
+          </div>
+        )}
+
         {/* KPIs */}
         <section className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           <Kpi label="Money on hold" value={usd(kpis.onHold)} sub={`${kpis.onHoldCount} authorized, not captured`} />

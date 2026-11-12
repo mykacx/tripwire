@@ -1,5 +1,5 @@
 import { after, NextResponse } from "next/server";
-import { reviewOrder } from "@/lib/ai";
+import { activeProvider, reviewOrder } from "@/lib/ai";
 import { z } from "zod";
 import { authorizeOrder } from "@/lib/paypal";
 import { priceCart } from "@/lib/products";
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
 
     await insertOrder(order);
     // Run the AI review after the response is sent, so the buyer isn't kept waiting.
-    after(() => reviewOrder(order.id).catch((e) => console.error("[ai] review failed", e)));
+    if (activeProvider()) after(() => reviewOrder(order.id).catch((e) => console.error("[ai] review failed", e)));
     return NextResponse.json({ orderId: order.id, authorizationStatus: auth.status });
   } catch (err) {
     return errorResponse(err);
