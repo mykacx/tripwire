@@ -1,6 +1,10 @@
 # Tripwire: Devpost submission draft
 
+**Tripwire stops fraud before the money moves: suspicious PayPal orders are authorized, reviewed, then voided — no refund, no chargeback.**
+
 **Tagline:** The AI spots the risk, you make the call, and fraud is stopped before the money moves.
+
+> **Demo data vs. live:** the queue ships with 40 seeded orders, clearly badged **Demo data**; approving or voiding them only changes local state. Both demo scenarios (a normal order and a fraud order) are **real PayPal sandbox transactions**, badged **Live**, that call PayPal's authorize, capture and void APIs.
 
 ## Inspiration
 
@@ -15,7 +19,7 @@ Tripwire is an AI-assisted fraud review queue for PayPal orders.
 - Every checkout uses PayPal's **authorize-then-capture** flow. The buyer's funds are held, not taken.
 - Each new order lands in a live review queue built on **AG Grid**.
 - Deterministic code computes risk signals from the store's own history: how far the order is above the store's typical order, ordering velocity, PayPal account country vs. shipping country, new customer + high value, gift cards and other easy-to-resell goods, quantity anomalies, odd hours, and **shared identity** (the same address, phone or PayPal account used under different names, even with small typing differences).
-- **Claude** reads the order, the signals and related orders, and writes a specific, evidence-based explanation, for example *"$750 is 17× the store's typical order, and the same Singapore address received gift-card orders under three other names this week, one already voided."* It also suggests an action and links orders that look like the same person.
+- **Claude** reads the order, the signals and related orders, and writes a specific, evidence-based explanation. A real example from a live sandbox order: *"Void or hold: $515 of gift cards (11× typical) shipping to an address used by 4 other names in 14 days, including an identical $515 order (TW-D001BD) already voided as fraud."* It also suggests an action and links orders that look like the same person.
 - **A human decides.** *Approve* captures the authorization through PayPal. *Void* voids it, so the money never moves: no refund, no chargeback, no dispute fee.
 
 The AI never moves money on its own.
@@ -28,6 +32,18 @@ The AI never moves money on its own.
 - **Google Gemini (optional, free tier)** as a second provider behind the same interface, so anyone can run the full AI review without paying. With no key at all, Tripwire still runs on rule scores and labels them "AI unavailable".
 - **AG Grid Community** as the centerpiece: a customized Quartz theme, custom cell renderers (risk badges, score bars, signal chips, country-mismatch highlight, honor-period countdown, action buttons), risk-based row styling, a pinned totals row, cell flashing for new and changed orders, a quick filter, tooltips and live updates via `getRowId`. There are no Enterprise features, so no license key is needed.
 - **Claude Code** as a coding assistant during the build. The product design, fraud signals and demo were directed by us.
+
+## Why AG Grid
+
+**In Tripwire the grid is the product, not a display.** The review queue is a live operations console where money decisions happen: every Approve or Void button in a row captures or voids a real PayPal authorization.
+
+- **`getRowId` + cell flashing:** rows update in place every 3 seconds. New orders and status/risk changes flash instead of the table reloading.
+- **Custom cell renderers:** risk badges, score bars, a payer → ship country-mismatch highlight, signal chips, an honor-period countdown and Approve/Void action buttons.
+- **Theming API:** a customized Quartz theme with risk-colored row styling, so it reads like a real ops tool.
+- **Pinned totals row and pinned columns:** order IDs and action buttons never scroll out of view.
+- **Tooltips and quick filter:** the full AI summary on hover, and instant search across names, emails, items and order IDs.
+
+It's built entirely on **AG Grid Community**, with no Enterprise modules and no license key, so any small merchant could run it for free.
 
 ## Challenges we ran into
 

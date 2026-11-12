@@ -95,7 +95,19 @@ All PayPal calls happen server-side (`lib/paypal.ts`). The client secret never r
 - **When it runs:** automatically after each authorization (in the background, so the buyer isn't kept waiting), for any pending order without a review, and on demand via **Re-run AI review**. The model name and timestamp are stored with each result.
 - **What it never does:** capture, void, or change an order's status. Only the Approve/Void buttons, clicked by a person, do that.
 
-## AG Grid features used (Community edition only)
+## Why AG Grid
+
+**In Tripwire the grid is the product, not a display.** The review queue is a live operations console where money decisions happen: orders stream in, risk updates in place, and every Approve or Void button in a row moves (or stops) real PayPal money. AG Grid makes that work:
+
+- **Live without flicker:** `getRowId` plus cell flashing updates rows in place every 3 seconds, so new orders and status/risk changes flash instead of the table reloading.
+- **Risk you can read at a glance:** custom cell renderers draw risk badges, score bars, a payer → ship country-mismatch highlight, signal chips and the Approve/Void action buttons.
+- **Looks like an ops tool:** a Quartz theme customized via the Theming API, with risk-colored row styling.
+- **Always-visible context:** a pinned totals row, plus pinned columns so the order ID and the action buttons never scroll away.
+- **Fast triage:** tooltips show the full AI summary and signals, and a quick filter searches names, emails, items and order IDs.
+
+It's built entirely on **AG Grid Community**: no Enterprise modules, no license key, no watermark. Any small merchant could run it for free.
+
+### AG Grid features used (Community edition only)
 
 - Customized **Quartz theme** via the Theming API (`themeQuartz.withParams`)
 - **Custom cell renderers**: status pill, risk badge, score with inline bar, customer, × typical, payer → ship country with mismatch highlight, signal chips, honor-period countdown, Approve/Void action buttons
