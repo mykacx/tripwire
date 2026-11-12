@@ -135,7 +135,7 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · AG Grid Community 36 
    | You set | AI review uses |
    |---|---|
    | `ANTHROPIC_API_KEY` | Claude `claude-sonnet-5-5` (as in the demo video) |
-   | only `GEMINI_API_KEY` | Gemini `gemini-3.8-flash` on Google AI Studio's free tier ([get a key](https://aistudio.google.com/apikey)); override with `GEMINI_MODEL` |
+   | only `GEMINI_API_KEY` | Gemini on Google AI Studio's free tier ([get a key](https://aistudio.google.com/apikey)): tries `gemini-3.8-flash`, falls back to `gemini-3.5-flash-lite` if it is busy (the free tier often is). Set `GEMINI_MODEL` to pin one model |
    | neither | No AI. Everything else works: seeded data, signals and rule scores, labeled **AI unavailable** |
 
    The **full AI review** (plain-English reasoning, identity linking) needs one of the two keys. Without a key, the PayPal flow, signals, rule scores and review queue all still work, and the demo video shows the AI review running with Claude.
@@ -224,7 +224,7 @@ scripts/generate-seed.mjs      Seed generator
 ## Tools used
 
 - **Anthropic Claude API** (`claude-sonnet-5-5`): risk reasoning, plain-English explanations and identity linking at runtime.
-- **Google Gemini API** (`gemini-3.8-flash`, optional): a free-tier fallback provider so judges can run the AI review without an Anthropic key.
+- **Google Gemini API** (`gemini-3.8-flash` / `gemini-3.5-flash-lite`, optional): a free-tier fallback provider so judges can run the AI review without an Anthropic key.
 - **Claude Code** was used as a coding assistant to build the project. The product design, fraud signals and demo scenarios were directed by the author.
 - **PayPal** Orders v2, Payments v2 (authorize, capture, void) and the PayPal JS SDK (`@paypal/react-paypal-js`), all in sandbox.
 - **AG Grid Community** for the review queue.

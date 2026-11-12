@@ -14,7 +14,9 @@ import { event, listOrders, updateOrder } from "./store";
 import type { AiReview, Order } from "./types";
 
 const CLAUDE_MODEL = "claude-sonnet-5-5";
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+// Gemini's free tier is often overloaded on its newest model, so fall back to a lighter one.
+// Setting GEMINI_MODEL pins a single model instead.
+const GEMINI_MODELS = process.env.GEMINI_MODEL ? [process.env.GEMINI_MODEL] : ["gemini-3.8-flash", "gemini-3.5-flash-lite"];
 
 const ReviewSchema = z.object({
   risk_level: z.enum(["low", "medium", "high"]),
@@ -47,8 +49,9 @@ type Review = z.infer<typeof ReviewSchema>;
 
 interface Provider {
   name: "anthropic" | "gemini";
-  model: string;
-  review(userText: string): Promise<Review>;
+  model: string; // shown in the UI
+  /** Returns the validated review and the exact model that produced it. */
+  review(userText: string): Promise<{ review: Review; model: string }>;
 }
 
 let anthropic: Anthropic | null = null;
@@ -65,26 +68,37 @@ const claudeProvider: Provider = {
     });
     if (response.stop_reason === "refusal") throw new Error("The model declined to review this order.");
     if (response.stop_reason === "max_tokens") throw new Error("The model response was cut off.");
-    return ReviewSchema.parse(response.parsed_output);
+    return { review: ReviewSchema.parse(response.parsed_output), model: CLAUDE_MODEL };
   },
 };
 
 let gemini: GoogleGenAI | null = null;
 const geminiProvider: Provider = {
   name: "gemini",
-  model: GEMINI_MODEL,
+  model: GEMINI_MODELS.join(" → "),
   async review(userText) {
-    const response = await (gemini ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })).models.generateContent({
-      model: GEMINI_MODEL,
-      contents: userText,
-      config: {
-        systemInstruction: SYSTEM_PROMPT,
-        responseMimeType: "application/json",
-        responseJsonSchema: z.toJSONSchema(ReviewSchema),
-      },
-    });
-    if (!response.text) throw new Error("Gemini returned an empty response.");
-    return ReviewSchema.parse(JSON.parse(response.text));
+    // 30s timeout and no SDK-level retries: we handle fallback ourselves so a busy model can't stall the queue.
+    gemini ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY, httpOptions: { timeout: 30_000, retryOptions: { attempts: 1 } } });
+    let lastError: unknown;
+    for (const model of GEMINI_MODELS) {
+      try {
+        const response = await gemini.models.generateContent({
+          model,
+          contents: userText,
+          config: {
+            systemInstruction: SYSTEM_PROMPT,
+            responseMimeType: "application/json",
+            responseJsonSchema: z.toJSONSchema(ReviewSchema),
+          },
+        });
+        if (!response.text) throw new Error("Gemini returned an empty response.");
+        return { review: ReviewSchema.parse(JSON.parse(response.text)), model };
+      } catch (err) {
+        lastError = err;
+        console.warn(`[ai] ${model} failed (${readableError(err)}); trying next Gemini model if any`);
+      }
+    }
+    throw lastError;
   },
 };
 
@@ -170,9 +184,10 @@ export async function reviewOrder(id: string): Promise<AiReview> {
     let lastError = "";
     const userText = `Review this order. Input data (JSON):\n\n${JSON.stringify(input, null, 2)}`;
     let result: Review | null = null;
+    let usedModel = provider.model;
     for (let attempt = 1; attempt <= 2 && !result; attempt++) {
       try {
-        result = await provider.review(userText); // validated against ReviewSchema by the provider
+        ({ review: result, model: usedModel } = await provider.review(userText)); // validated against ReviewSchema
       } catch (err) {
         lastError = readableError(err);
         console.error(`[ai] review attempt ${attempt} failed for ${id}:`, lastError);
@@ -184,7 +199,7 @@ export async function reviewOrder(id: string): Promise<AiReview> {
         ...result,
         linked_order_ids: result.linked_order_ids.filter((x) => knownIds.has(x) && x !== id), // drop hallucinated IDs
         source: "ai",
-        model: provider.model,
+        model: usedModel,
         reviewedAt: new Date().toISOString(),
       };
     } else {
@@ -195,7 +210,7 @@ export async function reviewOrder(id: string): Promise<AiReview> {
       o.ai = review;
       o.events.push(
         review.source === "ai"
-          ? event("ai_reviewed", "ai", `AI (${provider.model}) rated ${review.risk_level} risk (${review.risk_score}/100), suggests "${review.recommended_action}": ${review.summary}`)
+          ? event("ai_reviewed", "ai", `AI (${usedModel}) rated ${review.risk_level} risk (${review.risk_score}/100), suggests "${review.recommended_action}": ${review.summary}`)
           : event("ai_reviewed", "system", `AI unavailable (${lastError}). Using rule score ${rule.score}/100.`),
       );
     });
