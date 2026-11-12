@@ -12,3 +12,16 @@ body {
   background: #f6f7f9;
   color: #0f172a;
 }
+
+/* ---- AG Grid row styling by risk level ---- */
+.ag-row.tw-row-high { background-color: #fffbfb; }
+.ag-row.tw-row-medium { background-color: #fffdf7; }
+.tw-row-high .ag-cell[col-id="id"] { box-shadow: inset 4px 0 0 #dc2626; }
+.tw-row-medium .ag-cell[col-id="id"] { box-shadow: inset 4px 0 0 #d97706; }
+.tw-row-low .ag-cell[col-id="id"] { box-shadow: inset 4px 0 0 #16a34a; }
+.ag-row.tw-row-decided .ag-cell { opacity: 0.62; }
+.ag-row.tw-row-decided .ag-cell[col-id="actions"] { opacity: 1; }
+.ag-row-pinned { font-weight: 500; background-color: #f8fafc !important; }
+.ag-row { cursor: pointer; }
+.ag-cell { display: flex; align-items: center; }
+.ag-cell-value { overflow: hidden; text-overflow: ellipsis; }

@@ -16,6 +16,7 @@ export async function decide(id: string, decision: Decision): Promise<{ order: O
   if (order.demo) {
     const updated = await updateOrder(id, (o) => {
       o.status = decision === "approve" ? "approved" : "voided";
+      o.paypal.authorizationStatus = decision === "approve" ? "CAPTURED (demo)" : "VOIDED (demo)";
       o.events.push(event(decision === "approve" ? "approved" : "voided", "human", `${decision === "approve" ? "Approved" : "Voided"} by reviewer (demo data — no PayPal call made).`));
     });
     return { order: updated, message: `Demo order ${decision === "approve" ? "approved" : "voided"} locally — no PayPal call for demo data.` };
