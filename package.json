@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "seed": "node scripts/generate-seed.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
@@ -25,5 +26,10 @@
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.5",
     "typescript": "^5.9.3"
+  },
+  "description": "Tripwire: AI fraud review for PayPal orders, before the money moves.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
   }
 }
