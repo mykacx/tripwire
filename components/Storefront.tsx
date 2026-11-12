@@ -42,6 +42,7 @@ export default function Storefront({ paypalClientId }: { paypalClientId: string 
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState<{ orderId: string } | null>(null);
+  const [filled, setFilled] = useState<"normal" | "ring" | null>(null);
 
   // PayPal callbacks are created once; read the latest state through refs.
   const latest = useRef({ cart, form });
@@ -110,7 +111,7 @@ export default function Storefront({ paypalClientId }: { paypalClientId: string 
           <div className="mt-6 flex justify-center gap-3">
             <button
               className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50"
-              onClick={() => { setDone(null); setCart({}); setForm(EMPTY); }}
+              onClick={() => { setDone(null); setCart({}); setForm(EMPTY); setFilled(null); }}
             >
               Place another order
             </button>
@@ -176,12 +177,27 @@ export default function Storefront({ paypalClientId }: { paypalClientId: string 
           </div>
 
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Checkout</h2>
-              <div className="flex gap-1 text-xs">
-                <span className="self-center text-slate-400">Fill:</span>
-                <button className="rounded border border-slate-200 px-2 py-0.5 hover:bg-slate-50" onClick={() => setForm(SAMPLES.normal)}>normal</button>
-                <button className="rounded border border-slate-200 px-2 py-0.5 hover:bg-slate-50" onClick={() => setForm(SAMPLES.ring)}>suspicious</button>
+            <h2 className="mb-3 text-lg font-semibold">Checkout</h2>
+
+            {/* Demo shortcuts: fill the form with one of the README scenarios */}
+            <div className="mb-4 rounded-lg border-2 border-dashed border-blue-300 bg-blue-50/60 p-3">
+              <p className="text-sm font-semibold text-blue-900">⚡ Demo shortcut: fill in a test customer</p>
+              <p className="mb-2.5 text-xs text-blue-800/80">Pick a scenario to auto-fill the form, then pay with your sandbox buyer.</p>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => { setForm(SAMPLES.normal); setFilled("normal"); }}
+                  className={`rounded-lg border-2 bg-white px-3 py-2 text-left transition hover:border-green-500 hover:bg-green-50 ${filled === "normal" ? "border-green-600 ring-2 ring-green-200" : "border-green-300"}`}
+                >
+                  <span className="block text-sm font-semibold text-green-800">{filled === "normal" ? "✓ " : ""}Normal customer</span>
+                  <span className="block text-xs text-slate-600">Singapore address, expect low risk</span>
+                </button>
+                <button
+                  onClick={() => { setForm(SAMPLES.ring); setFilled("ring"); }}
+                  className={`rounded-lg border-2 bg-white px-3 py-2 text-left transition hover:border-red-500 hover:bg-red-50 ${filled === "ring" ? "border-red-600 ring-2 ring-red-200" : "border-red-300"}`}
+                >
+                  <span className="block text-sm font-semibold text-red-800">{filled === "ring" ? "✓ " : ""}Suspicious customer</span>
+                  <span className="block text-xs text-slate-600">Reseller-ring address + &ldquo;urgent&rdquo; note</span>
+                </button>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3 text-sm">

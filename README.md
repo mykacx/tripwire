@@ -164,7 +164,7 @@ Find each account's email and password under **Testing Tools → Sandbox Account
 ### 1. A normal order → low risk → Approve
 
 1. Open `/store`, add **one Wireless Mouse ($35)**.
-2. Fill in any normal details and address (or click **Fill: normal**).
+2. Fill in any normal details and address (or click the **Normal customer** demo shortcut).
 3. Pay with **Buyer 1**. You'll see *"Order received — pending review"*.
 4. Open the review queue (`/`). The new order flashes into the **Needs review** tab with a **Live** badge. Within a few seconds the AI marks it **low risk**.
 5. Click **Approve** → confirm. Tripwire captures the authorization via PayPal and the capture ID appears in the drawer.
@@ -172,7 +172,7 @@ Find each account's email and password under **Testing Tools → Sandbox Account
 ### 2. Fraud → high risk, linked to a reseller ring → Void
 
 1. Open `/store`, add **3 × Digital Gift Card $250** ($750).
-2. Ship to **`88 Jalan Bukit Merah, #05-12, Singapore 150088`** (line 1: `88 Jalan Bukit Merah`, line 2: `#05-12`, postal code `150088`, country Singapore), with order note **`urgent gift, ship fast`**. **Fill: suspicious** fills all of this in.
+2. Ship to **`88 Jalan Bukit Merah, #05-12, Singapore 150088`** (line 1: `88 Jalan Bukit Merah`, line 2: `#05-12`, postal code `150088`, country Singapore), with order note **`urgent gift, ship fast`**. The **Suspicious customer** demo shortcut on the checkout form fills all of this in.
 3. Pay with **Buyer 2 (Brazil)**.
 4. In the queue the order lands as **high risk**: *~17× typical*, *BR → SG*, *new customer + high value*, *100% resale-risk items*, and *linked to 3 orders*. Those are the three earlier orders from three different names shipping to the same flat, one of them already voided.
 5. Click the row to open the drawer and read the AI's reasoning. Click a linked order to jump to it.
