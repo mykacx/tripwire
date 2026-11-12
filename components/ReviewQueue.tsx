@@ -296,7 +296,8 @@ export default function ReviewQueue() {
         </section>
 
         {/* Grid */}
-        <section className="min-h-[480px] flex-1">
+        {/* AG Grid sizes itself to 100% of its parent, so the parent needs an explicit height. */}
+        <section style={{ height: "calc(100vh - 250px)", minHeight: 480 }}>
           <AgGridReact<OrderView>
             theme={gridTheme}
             rowData={rows}
@@ -314,7 +315,6 @@ export default function ReviewQueue() {
             onRowClicked={(e) => !e.node.rowPinned && e.data && setSelectedId(e.data.id)}
             overlayNoRowsTemplate={loaded ? '<span class="text-slate-500">No orders here. Place one in the demo store.</span>' : "Loading…"}
             domLayout="normal"
-            className="h-[calc(100vh-260px)] min-h-[480px]"
           />
         </section>
       </main>
